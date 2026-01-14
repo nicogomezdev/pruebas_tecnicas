@@ -1,10 +1,19 @@
 # https://leetcode.com/problems/longest-common-prefix/
-strs=["fdsmr","fdffmr", "kkada"]
-lista={}
-for k, palabra in enumerate(strs, start=1):
-    lista[k] = list(palabra)
+strs=["fdsmr","fdffmr"]
+lista=[]
+sublista=[]
 
-print(len(lista))
-for i in range(1,len(lista)+1):
-    for j in range (0,2):
-        print(lista[i][j])
+for i in range(len(strs)):
+    resul= list(strs[i])
+    lista.append(resul)
+
+for k in range(len(lista)):
+    sublista.append("".join(lista[k][:2]))
+    
+print(sublista)
+
+if all(elem == sublista[0] for elem in sublista):
+    print(type(sublista[1]))
+    
+else :
+    print("")
